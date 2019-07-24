@@ -1,4 +1,5 @@
 var express = require("express");
+var path=require("path");
 
 //tells node we're creating an "express server"
 var app = express();
@@ -14,6 +15,8 @@ app.use(express.json());
 //points our server to a series of "route files"
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
+
+
 
 //LISTENER
 //the below code "starts" our server
