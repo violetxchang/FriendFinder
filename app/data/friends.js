@@ -7,17 +7,17 @@
 
 var friendsArray = [{
         name: "Maya Rudolph",
-        photo: "http://",
+        photo: "../images/MayaRudolph.png",
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     },
     {
         name: "Fred Armisen",
-        photo: "http://",
+        photo: "../images/FredArmisen.png",
         scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     },
     {
         name: "Catherine Keener",
-        photo: "http://",
+        photo: "../images/CatherineKeener.png",
         scores: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
     }
 ]

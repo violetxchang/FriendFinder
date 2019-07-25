@@ -1,0 +1,54 @@
+body {
+    /* background-image: url("../images/bg.jpg");
+    background-position: center; */
+    background-color:rgb(28, 28, 28);
+    background-repeat: no-repeat;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: white;
+}
+
+div {
+    /* border: 1px solid black; */
+    background-color:rgb(28, 28, 28);
+    align-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    width: 70%;
+    align-content: center;
+    margin: 5% auto;
+    background-color: black;
+}
+
+.jumbotron{
+    background-color:rgb(28, 28, 28);
+}
+
+H1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8em;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: greenyellow;
+}
+
+footer {
+    margin: auto;
+    padding: 1em;
+    background-color:rgb(18, 18, 18);
+}
+
+a{
+    color:greenyellow;
+    text-transform: uppercase;
+}
+
+a:hover{
+    color:white;
+}
