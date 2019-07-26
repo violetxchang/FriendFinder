@@ -173,5 +173,22 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
+<script type="text/javascript">
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        //validation
+        var validation = true;
+        if ($("#name").val() === "" || $("#photo").val() === "") {
+            valid = false;
+        } else if($("#q1").val()==="empty" || $("#q2").val()==="empty" || $("#q3").val()==="empty"|| $("#q4").val()==="empty"|| $("#q5").val()==="empty"|| $("#q6").val()==="empty"|| $("#q7").val()==="empty"|| $("#q8").val()==="empty"|| $("#q9").val()==="empty"|| $("#q10").val()==="empty"){
+            valid=false
+        }
+
+        if(valid===true){
+            var newUser={
+                name: $(#name).val().trim(),
+            }
+        }
+</script>
 
 </html>
