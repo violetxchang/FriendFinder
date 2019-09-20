@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var path=require("path");
 
 //tells node we're creating an "express server"
 var app = express();
@@ -14,9 +13,9 @@ app.use(express.json());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-
+//app.use(bodyParser.text());
+//app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+//app.use(express.static("public"));
 //ROUTER
 //points our server to a series of "route files"
 require("./app/routing/apiRoutes")(app);
