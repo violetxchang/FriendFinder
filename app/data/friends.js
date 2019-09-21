@@ -8,17 +8,17 @@
 var friendsArray = [
     {
         name: "Maya Rudolph",
-        photo: "../images/MayaRudolph.png",
+        photo: "/images/MayaRudolph.png",
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     },
     {
         name: "Fred Armisen",
-        photo: "../images/FredArmisen.png",
+        photo: "/images/FredArmisen.png",
         scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     },
     {
         name: "Catherine Keener",
-        photo: "../images/CatherineKeener.png",
+        photo: "/images/CatherineKeener.png",
         scores: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
     }
 ]

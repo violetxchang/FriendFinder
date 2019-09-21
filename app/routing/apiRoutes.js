@@ -13,15 +13,10 @@ var friends = require("../data/friends");
 // ===============================================================================
 
 module.exports = function(app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-  // ---------------------------------------------------------------------------
-
-  app.get("/api/friends", function(req, res) {
-    res.json(friends);
-  });
+  app.get("/api/friends", function(req,res){
+    res.json(friends)
+  })
+ 
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -32,33 +27,39 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body parsing middleware
-    // if (tableData.length < 5) {
-    //   tableData.push(req.body);
-    //   res.json(true);
-    // }
-    // else {
-    //   waitListData.push(req.body);
-    //   res.json(false);
-    // }
+    console.log(req.body)
+    var surveyScores = req.body.scores;
+    
+    var bestDiff = 0;
+    var bestMatchIndex = 0;
 
-    console.log("REQ:", req.body)
+    for (var i = 0; i < friends.length; i++) {
+      var Diff = 0;
+      for (var j = 0; j < surveyScores.length; j++) {
+        Diff += Math.abs(friends[i].scores[j] - surveyScores[j])
+        if (bestDiff < Diff || bestDiff === 0) {
+          bestDiff = Diff
+          bestMatchIndex = i}
+      }
+    }
 
-    //
-    res.json({name:"isabel", photo:"kkkk"})
+
+    var bestMatch = {
+      name: friends[bestMatchIndex].name,
+      photo: friends[bestMatchIndex].photo,
+      score: friends[bestMatchIndex].scores
+    }
+    console.log("Your best match is: ", bestMatch)
+    friends.push(req.body)
+    console.log(req.body)
+    res.json(bestMatch)
+
+  
+
+    // console.log("REQ:", req.body)
+
+    // //
+    // res.json({name:"isabel", photo:"kkkk"})
   });
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function(req, res) {
-    // Empty out the arrays of data
-    tableData.length = 0;
-    waitListData.length = 0;
-
-    res.json({ ok: true });
-  });
 };
